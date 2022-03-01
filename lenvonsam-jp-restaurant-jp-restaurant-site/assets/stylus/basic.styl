@@ -1,0 +1,311 @@
+@charset 'utf-8'
+@require './variable'
+// @require "./reset"
+@font-face
+  font-family: 'Parisienne-Regular'
+  src: url('../assets/fonts/Parisienne-Regular.ttf') format('truetype')
+@font-face
+  font-family: 'NotoSerifJP-Black'
+  src: url('../assets/fonts/NotoSerifJP-Black.otf') format('truetype')
+@font-face
+  font-family: 'NotoSansJP-Medium'
+  src: url('../assets/fonts/NotoSansJP-Medium.otf') format('truetype')
+@font-face
+  font-family: 'NotoSansJP-Regular'
+  src: url('../assets/fonts/NotoSansJP-Regular.otf') format('truetype')
+@font-face
+  font-family: 'NotoSerifJP-Medium'
+  src: url('../assets/fonts/NotoSerifJP-Medium.otf') format('truetype')
+@font-face
+  font-family: 'NotoSerifJP-Regular'
+  src: url('../assets/fonts/NotoSerifJP-Regular.otf') format('truetype')
+body, html
+  font-family 'Microsoft YaHei', 'PingFang SC', 'SimSun', 'Helvetica', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback'
+  // -webkit-user-select none
+  // user-select none
+  font-size $font-size-medium
+  color $color-black
+  background $color-background
+  margin 0
+  word-spacing 1px
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+  box-sizing border-box
+*,
+*:before,
+*:after
+  -webkit-top-highlight-color transparent
+  box-sizing border-box !important
+.clear-fix
+  &::after
+    content ''
+    display table
+    clear both
+// 优化表单
+input, select
+  -webkit-appearance none
+  appearance none
+select::-ms-expand, input[type=radio]::-ms-check, input[type=checkbox]::-ms-check, input[type=text]::-ms-clear, input[type=tel]::-ms-clear, input[type=number]::-ms-clear
+  display none
+for num in (0 .. count)
+  prefix = (num * 5) px
+  .ml-{prefix}
+    margin-left prefix !important
+  .mr-{prefix}
+    margin-right prefix !important
+  .mt-{prefix}
+    margin-top prefix !important
+  .mb-{prefix}
+    margin-bottom prefix !important
+  .pt-{prefix}
+    padding-top prefix !important
+  .pb-{prefix}
+    padding-bottom prefix !important
+  .pl-{prefix}
+    padding-left prefix !important
+  .pr-{prefix}
+    padding-right prefix !important
+  .p-{prefix}
+    padding prefix prefix prefix prefix
+  .flex-{prefix}
+    -webkit-box-flex 0 0 prefix !important
+    -webkit-flex 0 0 prefix !important
+    -ms-flex 0 0 prefix !important
+    flex 0 0 prefix !important
+.text-center
+  text-align center
+.text-right
+  text-align right
+.text-left
+  text-align left
+.float-right
+  float right
+.float-left
+  float left
+.row, .flex
+  display -webkit-box
+  display -webkit-flex
+  display flex
+  flex-wrap wrap
+  .col
+    -webkit-box-flex 1
+    -webkit-flex 1
+    -ms-flex 1
+    flex 1
+.row
+  align-items center
+.align-center
+  align-items center
+.justify-between
+  justify-content space-between
+.justify-center
+  justify-content center
+.justify-end
+  justify-content flex-end
+.flex-column
+  flex-direction column
+input, textarea
+  border 0px
+input.placeholder-white::-webkit-input-placeholder
+  color rgba(255, 255, 255, 0.5) !important
+.hide
+  display none
+.no-border
+  border 0px !important
+.border
+  border 1px solid $color-border
+.border-bottom-line
+  border-bottom 1px solid $color-border
+.border-top-line
+  border-top 1px solid $color-border
+.border-right-line
+  border-right 1px solid $color-border
+.border-left-line
+  border-left 1px solid $color-border
+.border-circle
+  border-radius 50%
+.padding-xs
+  padding 5px
+.padding-sm
+  padding 10px
+.padding
+  padding 15px 15px
+.padding-lg
+  padding 30px 30px
+.no-padding
+  padding 0px 0px !important
+.inline
+  display inline-block
+.relative
+  position relative
+.scroll
+  overflow auto
+  -webkit-overflow-scrolling touch
+  will-change scroll-position
+.ft-10
+  font-size $font-size-small-s !important
+.ft-12
+  font-size $font-size-small !important
+.ft-13
+  font-size $font-size-medium-s !important
+.ft-14
+  font-size $font-size-medium !important
+.ft-16
+  font-size $font-size-large !important
+.ft-18
+  font-size $font-size-large-x !important
+.ft-20
+  font-size $font-size-large-xx !important
+.ft-24
+  font-size $font-size-large-xxx !important
+.ft-30
+  font-size $font-size-large-xxxx !important
+.ft-36
+  font-size $font-size-large-xxxxx !important
+.ft-bold
+  font-weight bold !important
+.full-width
+  width 100% !important
+.full-height
+  height 100%
+.border-top-1px, .border-right-1px, .border-bottom-1px, .border-left-1px
+  position relative
+  &:before, &:after
+    content ''
+    display block
+    position absolute
+    pointer-events none
+    transform-origin 0 0
+.border-top-1px
+  &:before
+    border-top 1px solid $color-row-line
+    left 0
+    top 0
+    width 100%
+    transform-origin 0 top
+.border-right-1px
+  &:after
+    border-right 1px solid $color-col-line
+    top 0
+    right 0
+    height 100%
+    transform-origin right 0
+.border-bottom-1px
+  &:after
+    border-bottom 1px solid $color-row-line
+    left 0
+    bottom 0
+    width 100%
+    transform-origin 0 bottom
+.border-left-1px
+  &:before
+    border-left 1px solid $color-col-line
+    top 0
+    left 0
+    height 100%
+    transform-origin left 0
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2)
+  .border-top-1px
+    &:before
+      width 200%
+      transform scale(0.5) translateZ(0)
+  .border-right-1px
+    &:after
+      height 200%
+      transform scale(0.5) translateZ(0)
+  .border-bottom-1px
+    &:after
+      width 200%
+      transform scale(0.5) translateZ(0)
+  .border-left-1px
+    &:before
+      height 200%
+      transform scale(0.5) translateZ(0)
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3)
+  .border-top-1px
+    &:before
+      width 300%
+      transform scale(0.333) translateZ(0)
+  .border-right-1px
+    &:after
+      height 300%
+      transform scale(0.333) translateZ(0)
+  .border-bottom-1px
+    &:after
+      width 300%
+      transform scale(0.333) translateZ(0)
+  .border-left-1px
+    &:before
+      height 300%
+      transform scale(0.333) translateZ(0)
+.ellps-row
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+.ellps
+  overflow hidden
+  text-overflow ellipsis
+  display -webkit-box !important
+  line-height 18px
+  -webkit-line-clamp 1
+  // white-space wrap
+  -webkit-box-orient vertical
+  &.ellps-2
+    -webkit-line-clamp 2
+  &.ellps-3
+    -webkit-line-clamp 3
+.text-white
+  color $color-white !important
+.text-gray
+  color $color-grey
+.text-red
+  color $color-red
+.text-green
+  color $color-green
+.text-blue
+  color $color-blue
+.text-warning
+  color $color-yellow
+.text-primary
+  color $color-main !important
+.text-dark-gray
+  color $color-dark-grey !important
+.text-66
+  color $color-grey !important
+.bg-gray
+  background $color-background
+.bg-primary
+  background $color-main !important
+.bg-white
+  background $color-white !important
+.bg-f9
+  background #f9f9f9
+.bg-success
+  background $color-green !important
+.bg-warning
+  background $color-yellow
+.bg-danger
+  background #F56C6C
+.bg-info
+  background #909399
+// [class*='iconfont icon-'], [class^=icon-]
+//   speak none
+//   font-style normal
+//   font-weight 400
+//   -webkit-font-feature-settings normal
+//   font-feature-settings normal
+//   font-variant normal
+//   text-transform none
+//   line-height 1
+//   vertical-align baseline
+//   display inline-block
+//   -webkit-font-smoothing antialiased
+//   -moz-osx-font-smoothing grayscale
+// .el-submenu [class^='iconfont icon-']
+//   vertical-align middle
+//   margin-right 5px
+//   width 24px
+//   text-align center
+//   font-size 18px

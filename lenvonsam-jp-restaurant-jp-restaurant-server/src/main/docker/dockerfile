@@ -1,0 +1,12 @@
+FROM frolvlad/alpine-java:jdk8-slim
+#FROM openjdk:8-jdk-alpine
+RUN echo "Asia/Shanghai" > /etc/timezone
+# ENV LANG en_US.UTF-8
+# RUN apk add --update --no-cache ttf-dejavu fontconfig && rm -rf /var/cache/apk/*
+
+VOLUME /tmp
+ADD restaurant-server.jar app.jar
+EXPOSE 8086
+ENV JAVA_OPTS=""
+# -Djava.security.egd=file:/dev/./urandom 可解决tomcat可能启动慢的问题
+ENTRYPOINT java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar /app.jar

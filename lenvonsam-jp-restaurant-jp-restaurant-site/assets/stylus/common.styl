@@ -1,0 +1,182 @@
+@charset 'utf-8'
+@require './basic'
+@require './iconfont'
+.width-90
+  width 90% !important
+.flex-88
+  flex 0 0 88px !important
+.flex-120
+  flex 0 0 120px !important
+.flex-130
+  flex 0 0 130px !important
+.flex-150
+  flex 0 0 150px !important
+.flex-420
+  flex 0 0 420px !important
+.flex-50
+  flex 0 0 50px !important
+.flex-30
+  flex 0 0 30px !important
+.flex-20
+  flex 0 0 20px !important
+.ptb-xs
+  padding-top 5px
+  padding-bottom 5px
+.mtb-xs
+  margin-top 5px
+  margin-bottom 5px
+.ant-tooltip,
+.ant-modal-mask,
+.ant-modal-wrap,
+.ant-drawer
+  z-index 1020
+.ant-message
+  z-index 9999
+.ant-menu-inline-collapsed
+  width 60px !important
+  & > .ant-menu-item,
+  & > .ant-menu-submenu > .ant-menu-submenu-title
+    padding 0 21px !important
+.ant-menu-vertical .ant-menu-item:not(:last-child),
+.ant-menu-inline .ant-menu-item:not(:last-child)
+  margin-top 0px
+.ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td
+  box-sizing content-box !important
+.ant-calendar-picker
+  width 100%
+.ant-layout-sider-zero-width-trigger
+  right -8px !important
+  width 8px !important
+.search
+  .el-input__inner
+    background rgba(75, 92, 100, 0.8) !important
+    border none
+    color #ddd
+.pagination-box
+  .el-input--mini .el-input__inner
+    height 25px
+    line-height 25px
+    padding 0 2px !important
+    border-radius 2px
+*::-webkit-scrollbar
+  width 7px
+  height 15px
+  background-color transparent
+/* 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 */
+*::-webkit-scrollbar-track
+  background-color #f0f6ff
+/* 定义滚动条轨道 内阴影+圆角 */
+*::-webkit-scrollbar-thumb
+  background-color rgba(0, 0, 0, 0.3)
+  // border-radius:6px;
+.mark
+  background #1e88e5
+  border-radius 10px
+  padding 1px 10px
+  margin-left 5px
+  color #fff
+.el-submenu [class^=el-icon-]
+  font-size 15px
+.el-menu-item:hover
+  background-color #4E5465 !important
+  border-left 5px solid #4E5465 !important
+.m-button
+  width 80%
+  height 48px
+  background $color-main
+  border-radius 8px
+  font-size 18px
+  display flex
+  // font-weight: bold
+  align-items center
+  letter-spacing 2px
+  justify-content center
+  color #fff
+  margin 10px auto
+.m-reverse-button
+  background #EDF1E8
+  width 50%
+  height 38px
+  font-size 16px
+  border-radius: 20px
+  display flex
+  // font-weight: bold
+  align-items center
+  letter-spacing 2px
+  justify-content center
+  color $color-main
+  margin 10px auto
+.bg-light-green
+  background #F6FAF0
+button[ant-click-animating-without-extra-node]:after 
+  border: 0 none;
+  opacity: 0;
+  animation:none 0 ease 0 1 normal;
+.pc-content
+  width 1024px
+  margin 0 auto
+.pc-banner-bg
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+.pc-ft-parisienne
+  font-family: 'Parisienne-Regular'
+.pc-ft-noto-black
+  font-family: 'NotoSerifJP-Black'
+.mb-ft-noto-medium
+  font-family: 'NotoSerifJP-Medium'
+.pc-fix-appoint-btn
+  width 100px
+  height 100px
+  position fixed
+  z-index 100
+  top 40%
+  right 10%
+  background-image: url('../assets/imgs/pc_fix_appoint_btn.png')
+  background-position: center
+  background-size: cover
+  transition: scale 150ms linear
+  &.small
+    opacity 0.85
+    transform: scale(0.9)
+  &:hover
+    cursor pointer
+.mb-fix-appoint-btn
+  width 100px
+  height 100px
+  position fixed
+  z-index 100
+  top 45%
+  right -70px
+  background-image: url('../assets/imgs/mb_fix_appoint_btn.png')
+  background-position: center
+  background-size: cover
+  transition: right 0.2s linear
+  -moz-user-select: none
+  -ms-user-select: none
+  -webkit-user-select: none
+  user-select none
+  .container
+    width 100px
+    height 100px
+    position relative
+    .dot
+      width: 12px
+      height:24px
+      position:relative
+      top: 40px
+      left:5px
+      z-index -1
+  // &:hover
+    // cursor pointer
+  &.full
+    transition: scale 100ms linear
+    .container
+      .dot
+        z-index 1
+    &.small
+      transform: scale(0.9)
+      opacity 0.95
+      background-image: url('../assets/imgs/mb_fix_appoint_small_btn.png')
+    right 10px
+    background-image: url('../assets/imgs/mb_fix_appoint_close_btn.png')

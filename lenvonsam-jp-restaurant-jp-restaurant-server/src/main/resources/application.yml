@@ -1,0 +1,56 @@
+# 应用名称
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm
+    default-property-inclusion: non_null
+  application:
+    name: restaurant-server
+  profiles:
+    active:
+      - online
+  servlet:
+    multipart:
+      enabled: true
+      # 10M
+      max-file-size: 10MB
+  #指定freemarker的模板路径和模板的后缀
+  freemarker:
+    charset: UTF-8
+    cache: false
+    template-loader-path:
+      - classpath:/webapp/
+    suffix: .ftl
+    #指定是否要暴露请求和会话属性
+    expose-request-attributes: true
+    expose-session-attributes: true
+  # spring 静态资源扫描路径
+  resources:
+    # 数据库驱动
+    static-locations:
+      - classpath:/static/
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 应用服务 WEB 访问端口
+server:
+  port: 8086
+
+#下面这些内容是为了让MyBatis映射
+mybatis-plus:
+  # 日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #指定Mybatis的实体目录
+  type-aliases-package: com.org.jp.model
+  #指定Mybatis的Mapper文件
+  mapper-locations: classpath:mapper/*xml
+  global-config:
+    db-config:
+      logic-delete-field: del_flag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+qiniu:
+  bucket: jprestaurant
+  access-key: o1PUZJyqqKEJ8CwwxH3fRQFELAHZ-oK9LwNwjZVm
+  secret-key: 7ocZ49ef61lq9ny4uA3FFBHCBUgRY8lSZnheXjXB
+  public-url: http://jprestaurant.thinkingsam.cn/

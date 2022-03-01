@@ -1,0 +1,65 @@
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <jmxConfigurator/>
+
+    <springProperty scope="context" name="FILE_NAME" source="spring.application.name"/>
+    <springProperty scope="context" name="MODE" source="spring.profiles.active"/>
+
+    <appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>../logs/${FILE_NAME}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ssS} %5p [%c]:%L-%m%n</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+        <prudent>false</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>../logs/${FILE_NAME}.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+    </appender>
+<!--    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+<!--        <destination>192.168.80.210:5000</destination>-->
+<!--        &lt;!&ndash; 日志输出编码 &ndash;&gt;-->
+<!--        <encoder charset="UTF-8"-->
+<!--                 class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">-->
+<!--            <providers>-->
+<!--                <timestamp>-->
+<!--                    <timeZone>Asia/Shanghai</timeZone>-->
+<!--                </timestamp>-->
+<!--                <pattern>-->
+<!--                    <pattern>-->
+<!--                        {-->
+<!--                        "logLevel": "%level",-->
+<!--                        "serviceName": "${MODE}:${FILE_NAME:-}",-->
+<!--                        "pid": "${PID:-}",-->
+<!--                        "thread": "%thread",-->
+<!--                        "class": "%logger{40}",-->
+<!--                        "rest": "%message",-->
+<!--                        "trace": "%X{X-B3-TraceId:-}",-->
+<!--                        "span": "%X{X-B3-SpanId:-}",-->
+<!--                        "exportable": "%X{X-Span-Export:-}",-->
+<!--                        "stack_trace": "%exception"-->
+<!--                        }-->
+<!--                    </pattern>-->
+<!--                </pattern>-->
+<!--            </providers>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+    <logger name="com.zhifeng" level="debug" />
+    <logger name="com.xxl.job.core.thread.ExecutorRegistryThread" level="warn" />
+
+    <!-- 屏蔽掉druid版本低下导致的bug error日志信息 -->
+    <logger name="com.alibaba.druid.pool.DruidAbstractDataSource" level="OFF"/>
+
+    <root level="info">
+        <appender-ref ref="logfile"/>
+    </root>
+    <springProfile name="stage">
+        <root level="info">
+            <appender-ref ref="logfile"/>
+<!--            <appender-ref ref="LOGSTASH"/>-->
+        </root>
+    </springProfile>
+</configuration>
