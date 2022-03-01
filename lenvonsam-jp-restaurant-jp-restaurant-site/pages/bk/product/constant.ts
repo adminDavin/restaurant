@@ -14,12 +14,12 @@ export const searchItems = [
     type: 'remoteSelect',
     remoteConfig: merchantSelectConfig
   },
-  {
-    lbl: 'product.search.productName',
-    i18: true,
-    val: '',
-    key: 'productTitle',
-  },
+  // {
+  //   lbl: 'product.search.productName',
+  //   i18: true,
+  //   val: '',
+  //   key: 'productTitle',
+  // },
   // {
   //   lbl: '时间',
   //   val: null,
@@ -172,13 +172,13 @@ export const tableMenuConfig = {
       i18: true,
       key: 'status',
       render(row: any) {
-        let result = '草稿'
+        let result = '編集中'
         switch (row.status) {
           case 1:
-            result = '上架'
+            result = '公開'
             break
           case 2:
-            result = '下架'
+            result = '非公開'
             break
           default:
             break

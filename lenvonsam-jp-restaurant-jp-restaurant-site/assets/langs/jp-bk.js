@@ -106,7 +106,7 @@ export default {
     form: {
       picName: '画像名',
       region: '公開エリア',
-      picUrl: 'アップロット',
+      picUrl: '画像',
       picLocation: '画像の位置',
       area_1: 'サイトのトップ画像',
       area_2: 'オンラインショップ箇所の画像',
@@ -141,8 +141,8 @@ export default {
     form: {
       title: 'タイトル',
       subTitle: '第2タイトル',
-      cover: 'タイトル',
-      detail: '紹介',
+      cover: 'タイトル背景',
+      detail: '紹介画像',
       merchant: '店舗',
     },
     formMenu: {
