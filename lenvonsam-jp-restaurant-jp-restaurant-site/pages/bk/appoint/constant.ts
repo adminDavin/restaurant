@@ -92,7 +92,7 @@ export const tableConfig = {
         },
         // {
         //   type: 'banner',
-        //   title: '轮播图'
+        //   title: '店内写真'
         // }
       ],
     },

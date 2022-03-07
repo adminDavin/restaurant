@@ -32,7 +32,7 @@
         a-checkbox-group(v-model="chooseInfrastructureMark", :options="defaultInfrastructureMark")
       a-form-model-item(:label="$bk18n.t('merchant.form.thumb')", required)
         image-upload(v-model="localForm.thumbCompt")
-      a-form-model-item(label="轮播图", prop="galleryCompt")
+      a-form-model-item(label="店内写真", prop="galleryCompt")
         image-upload(type="banner", v-model="localForm.galleryCompt")
       a-row
         a-col(:span="12", :offset="6")
