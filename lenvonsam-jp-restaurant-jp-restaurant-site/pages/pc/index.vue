@@ -10,7 +10,7 @@ a-layout(style="background: #fff")
             .ft-18 店舗紹介
             div Store Information
         a-col.home-card.flex.align-center.justify-center(:span="6")
-          .text-center
+          a.text-center(href='https://sitadinning.base.shop/', target="_blank")
             .ft-18 オンラインショップ
             div Online shop
         a-col.home-card.flex.align-center.justify-center(:span="6", @click="jump('/pc/appoint')")

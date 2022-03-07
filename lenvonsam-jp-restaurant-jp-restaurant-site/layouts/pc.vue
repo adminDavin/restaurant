@@ -16,7 +16,7 @@ client-only
               a-sub-menu(v-if="index === 3", key="#", popupClassName="top-menu-sub")
                 span(slot="title")
                   i.iconfont.ft-18.mr-5(:class="'icon-' + menu.icon")
-                  | {{$pc18n.t(menu.title)}}
+                  | {{$pc18n.t(menu.title)}} 
                 a-menu-item(v-for="(m, midx) in merchantList", :key="'/pc/merchant/detail?id=' + m.id") {{m.merchantName}}
               a-menu-item(v-else, :key="menu.url")
                 i.iconfont.ft-18.mr-5(:class="'icon-' + menu.icon")

@@ -10,7 +10,7 @@ a-layout(style="background: #fff")
           div 店舗紹介
           div Store Information
       a-col.home-card.flex.align-center.justify-center(:span="12")
-        .text-center
+        a.text-center(href='https://sitadinning.base.shop/', target="_blank")
           div オンラインショップ
           div Online shop
     a-row.mb-ft-noto-medium(style="height: 100px;background:#EDF1E8")
