@@ -197,11 +197,11 @@ export const tableMenuConfig = {
       actions: [
         {
           type: 'edit',
-          title: '编辑',
+          title: '編集',
         },
         {
           type: 'preview',
-          title: '封面预览'
+          title: '内容確認'
         },
       ],
     },
