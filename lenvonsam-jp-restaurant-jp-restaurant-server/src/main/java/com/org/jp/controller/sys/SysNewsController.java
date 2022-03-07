@@ -4,10 +4,12 @@ package com.org.jp.controller.sys;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.org.jp.controller.BaseController;
 import com.org.jp.dto.SysNewsDTO;
 import com.org.jp.model.sys.SysNews;
+import com.org.jp.service.impl.sys.NewsServiceImpl;
 import com.org.jp.service.sys.ISysNewsService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,9 @@ public class SysNewsController extends BaseController {
     @Autowired
     private ISysNewsService sysNewsService;
 
+	@Autowired
+	private NewsServiceImpl newsServiceImpl;
+
     @GetMapping("")
     public ResultDTO newsList() {
         Map<String, Object> params = DaoUtil.requestMap2Map(request);
@@ -46,12 +51,12 @@ public class SysNewsController extends BaseController {
         return ResultDTO.ok(pages.getRecords(), pages.getTotal());
     }
 
-    @PostMapping("")
+	@PostMapping("")
     @Transactional(rollbackFor = {Exception.class})
     @Caching(evict = {
             @CacheEvict(key = "'news_'+ #sysNewsDTO.id", value = "news")
     })
-    public ResultDTO newsSaveOrUpdate(@RequestBody @Valid SysNewsDTO sysNewsDTO) {
+	public ResultDTO newsSaveOrUpdate(@RequestBody @Valid SysNewsDTO sysNewsDTO) {
         SysNews origin = new SysNews();
         BeanUtils.copyProperties(sysNewsDTO, origin);
         if (origin.getNewsContent().length() > 20) {
@@ -59,9 +64,21 @@ public class SysNewsController extends BaseController {
         } else {
             origin.setNewsThumbContent(origin.getNewsContent());
         }
-        sysNewsService.saveOrUpdate(origin);
+        try {
+        	var result = newsServiceImpl.selectById(origin.getId());
+        	if (ObjectUtils.isEmpty(result)) {
+        		sysNewsService.saveOrUpdate(origin);
+        	} else {
+        		newsServiceImpl.updateByPrimaryKeySelective(result.getId(), origin);
+        	}
+        	System.out.println(result);
+        } catch(Exception e) {
+        	throw new RuntimeException("upload failed for" + e.getMessage());
+        }
+        
         return ResultDTO.ok();
     }
+
 
     @GetMapping("{id}")
     @Cacheable(key = "'news_' + #id", value = "news", condition = "#id != null")

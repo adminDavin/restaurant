@@ -1,0 +1,35 @@
+2022-03-03 12:42:37938  INFO [com.org.jp.RestaurantServerApplication]:55-Starting RestaurantServerApplication using Java 11.0.11 on davinzhangs-MacBook-Pro.local with PID 7536 (/Users/davinzhang/worker/restaurant/lenvonsam-jp-restaurant-jp-restaurant-server/target/restaurant-server.jar started by davinzhang in /Users/davinzhang/worker/restaurant/lenvonsam-jp-restaurant-jp-restaurant-server/target)
+2022-03-03 12:42:37943  INFO [com.org.jp.RestaurantServerApplication]:663-The following profiles are active: online
+2022-03-03 12:42:40730  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate]:262-Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 12:42:40736  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate]:132-Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 12:42:40816  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate]:201-Finished Spring Data repository scanning in 57 ms. Found 0 Redis repository interfaces.
+2022-03-03 12:42:41716  INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:376-Bean 'redisConfig' of type [com.org.jp.RedisConfig$$EnhancerBySpringCGLIB$$f7a5e855] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-03 12:42:42623  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]:108-Tomcat initialized with port(s): 8086 (http)
+2022-03-03 12:42:42647  INFO [org.apache.catalina.core.StandardService]:173-Starting service [Tomcat]
+2022-03-03 12:42:42648  INFO [org.apache.catalina.core.StandardEngine]:173-Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-03-03 12:42:42762  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]:173-Initializing Spring embedded WebApplicationContext
+2022-03-03 12:42:42763  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]:290-Root WebApplicationContext: initialization completed in 4671 ms
+2022-03-03 12:42:4411  WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext]:591-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mybatisPlusConfig': Unsatisfied dependency expressed through field 'userAccountService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userAccountServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userAccountMapper' defined in URL [jar:file:/Users/davinzhang/worker/restaurant/lenvonsam-jp-restaurant-jp-restaurant-server/target/restaurant-server.jar!/BOOT-INF/classes!/com/org/jp/mapper/user/UserAccountMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Generic.class]: Unsatisfied dependency expressed through method 'dataSource' parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Could not bind properties to 'DataSourceProperties' : prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'spring.datasource.type' to java.lang.Class<javax.sql.DataSource>
+2022-03-03 12:42:4450  INFO [org.apache.catalina.core.StandardService]:173-Stopping service [Tomcat]
+2022-03-03 12:42:4477  INFO [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener]:136-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-03 12:42:44110 ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter]:40-
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.type' to java.lang.Class<javax.sql.DataSource>:
+
+    Property: spring.datasource.type
+    Value: com.alibaba.druid.pool.DruidDataSource
+    Origin: class path resource [application-online.yml] from restaurant-server.jar - 6:11
+    Reason: failed to convert java.lang.String to java.lang.Class<javax.sql.DataSource> (caused by java.lang.ClassNotFoundException: com.alibaba.druid.pool.DruidDataSource)
+
+Action:
+
+Update your application's configuration
+

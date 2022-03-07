@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.org.jp.mapper.sys.NewsMapper">
+
+	<resultMap id="NewsMap" type="com.org.jp.model.sys.SysNews">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="tenant_id" jdbcType="INTEGER"
+			property="tenantId" />
+		<result column="res_info_code" jdbcType="VARCHAR"
+			property="resInfoCode" />
+		<result column="res_info_name" jdbcType="VARCHAR"
+			property="resInfoName" />
+		<result column="res_info_type" jdbcType="VARCHAR"
+			property="resInfoType" />
+		<result column="res_content_type" jdbcType="VARCHAR"
+			property="resContentType" />
+	</resultMap>
+
+	<select id="selectById" resultMap="NewsMap">
+		select t.* from t_sys_news t
+		where t.id=#{id} limit 1
+	</select>
+
+	<update id="updateByPrimaryKeySelective" parameterType="map">
+		update t_sys_news
+		<set>
+			<if test="record.newsTitle != null">
+			news_title = #{record.newsTitle}, 
+			</if>
+			<if test="record.newsContent != null">
+			news_content = #{record.newsContent},
+			</if>
+			<if test="record.newsThumbContent != null">
+			news_thumb_content = #{record.newsThumbContent}, 
+			</if>
+			<if test="record.newsProperty != null">
+			news_property = #{record.newsProperty}, 
+			</if>
+			<if test="record.merchantCode != null">
+			merchant_code = #{record.merchantCode}, 
+			</if>
+			<if test="record.publishDate != null">
+			publish_date = #{record.publishDate}, 
+			</if>
+			<if test="record.newsAuthor != null">
+			news_author = #{record.newsAuthor}, 
+			</if>
+			<if test="record.newsThumbUrl != null">
+			news_thumb_url = #{record.newsThumbUrl}, 
+			</if>
+			<if test="record.busiType != null">
+			busi_type = #{record.busiType}, 
+			</if>
+			<if test="record.platformCode != null">
+			platform_code = #{record.platformCode}, 
+			</if>
+			<if test="record.delFlag != null">
+			del_flag = #{record.delFlag}, 
+			</if>
+			<if test="record.updateUserCode != null">
+			update_user_code = #{record.updateUserCode}, 
+			</if>
+			<if test="record.updateUserName != null">
+			update_user_name = #{record.updateUserName}, 
+			</if>
+			<if test="record.remark != null">
+			remark = #{record.remark}, 
+			</if>
+			<if test="record.version != null">
+			version = #{record.version}, 
+			</if>
+			<if test="record.status != null">
+			status = #{record.status}
+			</if>
+			update_time = #{record.updateTime}
+		</set>
+		<where>
+		id = #{id}
+		</where>
+	</update>
+</mapper>
