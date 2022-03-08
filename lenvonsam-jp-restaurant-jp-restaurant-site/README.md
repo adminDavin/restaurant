@@ -1,6 +1,6 @@
 # nuxt-jp-site
 
-## Build Setup
+## 株式会社SURYA
 
 ```bash
 # install dependencies
