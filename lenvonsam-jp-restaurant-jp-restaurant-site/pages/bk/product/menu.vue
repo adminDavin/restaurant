@@ -1,7 +1,7 @@
 <template lang="pug">
 .container.bg-white.padding
   h1.ptb-xs {{$bk18n.t('menu.listTitle')}}
-  search-bar(:searchItems="searchItems", @search="searchDataList")
+  SearchBarFixed(:searchItems="searchItems", @search="searchDataList")
   s-button-group(:btns="buttonGroups", @click="btnGroupClick", :sections="choosedRowKeys")
   basic-table.mt-15(:tableData.sync="tableData", :tableConfig="tableConfig", @rowBtnClick="rowBtnClick", @rowSelectChange="rowSelection", :total="total", @pgChange="onPgChange", @pgSizeChange="onPgSizeChange")
   a-drawer(:visible="visible", :width="600", @close="drawerClose", :title="$bk18n.t('common.edit')", :get-container="false", :style="{'position': 'absolute'}")
@@ -36,6 +36,7 @@ import {
 import { MerchantProductDTO, MerchantDTO } from '@/models/MerchantModels'
 import imageUpload from '@/components/ImageUpload.vue'
 import CommonRemoteSelect from '@/components/CommonRemoteSelect.vue'
+import SearchBarFixed from '@/components/SearchBarFixed.vue'
 
 let me: any
 @Component({
@@ -43,6 +44,7 @@ let me: any
   components: {
     imageUpload,
     CommonRemoteSelect,
+    SearchBarFixed
   },
 })
 class BkProductMenuIndexPage extends Vue {

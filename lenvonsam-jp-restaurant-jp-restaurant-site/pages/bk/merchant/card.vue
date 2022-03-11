@@ -1,7 +1,7 @@
 <template lang="pug">
 .container.bg-white.padding
   h1.ptb-xs {{$bk18n.t('merchantCard.listTitle')}}
-  search-bar(:searchItems="searchItems", @search="searchDataList")
+  SearchBarFixed(:searchItems="searchItems", @search="searchDataList")
   //- s-button-group(:btns="buttonGroups", @click="btnGroupClick")
   basic-table.mt-15(:tableData.sync="tableData", :tableConfig="tableConfig", @rowBtnClick="rowBtnClick", @rowSelectChange="rowSelection", :total="total", , @pgChange="onPgChange", @pgSizeChange="onPgSizeChange")
   a-drawer(:visible="visible", :width="600", @close="drawerClose", :title="$bk18n.t('merchantCard.form.title')", :get-container="false", :style="{'position': 'absolute'}")
@@ -31,12 +31,14 @@ import {
 import { MerchantDTO, MerchantCardDTO } from '@/models/MerchantModels'
 import CommonRemoteSelect from '@/components/CommonRemoteSelect.vue'
 import kindEditor from '@/components/Kindeditor.vue'
+import SearchBarFixed from '@/components/SearchBarFixed.vue'
 
 @Component({
   layout: 'backend',
   components: {
     CommonRemoteSelect,
     kindEditor,
+    SearchBarFixed
   },
 })
 class BkMerchantCardPage extends Vue {

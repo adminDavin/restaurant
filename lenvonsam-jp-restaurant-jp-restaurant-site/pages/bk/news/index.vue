@@ -1,7 +1,7 @@
 <template lang="pug">
 .container.bg-white.padding
   h1.ptb-xs {{$bk18n.t('news.listTitle')}}
-  search-bar(:searchItems="searchItems", @search="searchDataList")
+  SearchBarFixed(:searchItems="searchItems", @search="searchDataList")
   s-button-group(:btns="buttonGroups", @click="btnGroupClick", :sections="choosedRowKeys")
   basic-table.mt-15(:tableData.sync="tableData", :tableConfig="tableConfig", @rowBtnClick="rowBtnClick", @rowSelectChange="rowSelection", :total="total", @pgChange="onPgChange", @pgSizeChange="onPgSizeChange")
   a-drawer(:visible="visible", :width="600", @close="drawerClose", :title="$bk18n.t('common.edit')", :get-container="false", :style="{'position': 'absolute'}")
@@ -27,6 +27,7 @@ import { searchItems, buttonGroups, tableConfig } from './constant'
 import { NewsDTO } from '@/models/NewsModels'
 import imageUpload from '@/components/ImageUpload.vue'
 import kindEditor from '@/components/Kindeditor.vue'
+import SearchBarFixed from '@/components/SearchBarFixed.vue'
 
 let me: any
 @Component({
@@ -34,6 +35,7 @@ let me: any
   components: {
     imageUpload,
     kindEditor,
+    SearchBarFixed
   },
 })
 class BkNewsIndexPage extends Vue {
