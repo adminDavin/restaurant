@@ -1,7 +1,7 @@
 <template lang="pug">
 .bg-white.padding
-  .pt-30.text-center.ft-24.news-title.pc-ft-parisienne  News&Topics
-  .text-center.ft-bold.mt-10.pc-ft-noto-black  お知らせ
+  .pt-30.text-center.ft-24.news-title.pc-ft-parisienne  {{$pc18n.t('pcIndex.header1.notice.below')}}
+  .text-center.ft-bold.mt-10.pc-ft-noto-black  {{$pc18n.t('pcIndex.header1.notice.above')}}
   .mt-20.news-bg
     .row.pb-10.pt-10.border-bottom-line(v-for="(news, idx) in newsList", :key="idx", @click="jump('/mb/news/detail?id=' + news.id)")
       .flex-80.text-green {{news.publishDate.substring(0, 10).replace(/-/g, '.')}}

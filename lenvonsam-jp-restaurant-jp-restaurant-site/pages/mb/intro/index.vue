@@ -1,36 +1,36 @@
 <template lang="pug">
 .bg-white.pb-20(style="box-sizing: border-box")
   .padding-lg
-    .ft-24.text-green.ft-bold スパイス料理を
-    .ft24.text-green 毎日楽しんでいただきたい!
-    .text-66.mt-25 スパイスは味や、風味を楽しめる事だけじゃなく、健康や美容にも大きく働きかける調味料としても近年では広く知れ渡ってきている様に、アンチエイジングの抗酸化作用効果、体脂肪を燃焼させて代謝アップ、血行促進で冷え性の改善、カレーなどに代表されるクミンは消化液の分泌を促して、解毒作用や整腸作用とさらには食欲増進、抗酸化作用や免疫力も上げると言うほどスパイス一つをとっても大変身体に良い働きをするものばかりなのです。医食同源と言われる様に日々の食事の中で少しづつでもスパイスを意識した生活を送ってみませんか? 
-    .mt-25.text-right by株式会社SURYA
-    .mt-50.text-green “ SURYA とスパイスの融合でお料理を
-    .text-green 提供いたしております ”
+    .ft-24.text-green.ft-bold {{$pc18n.t('concept.part1.code1_1')}}
+    .ft24.text-green {{$pc18n.t('concept.part1.code1_2')}}
+    .text-66.mt-25 {{$pc18n.t('concept.part1.code3')}}
+    .mt-25.text-right {{$pc18n.t('concept.part1.code4')}}
+    .mt-50.text-green {{$pc18n.t('concept.mb.intro.subtitle.code1_1')}}
+    .text-green {{$pc18n.t('concept.mb.intro.subtitle.code1_2')}}
     .text-center.pt-25
       img(src="~assets/imgs/intro_1.png", style="width: 90%;")
     .text-66.mt-20
-      span.ft-16.ft-bold アジア
-      span 各国で経験を積んだシェフ達による調理技術が今、惜しみなく発揮された料理たちは、どこか新しくもあり、どこか懐かしくもあります。
+      span.ft-16.ft-bold {{$pc18n.t('concept.part2.code1_1')}}
+      span {{$pc18n.t('concept.part2.code1_2')}}
     .text-center.pt-25
       img(src="~assets/imgs/intro_2.png", style="width: 90%;")
     .text-66.mt-20
-      span.ft-16.ft-bold 私たち
-      span の料理は香辛料を多用した料理が多いのですが、そこは日本でも⻑期に腕を振るうシェフたちが日本の皆様の好みのさじ加減を十分に理解しておりますのできっと気に入って頂ける味だと信じています。
+      span.ft-16.ft-bold {{$pc18n.t('concept.part3.code1_1')}}
+      span {{$pc18n.t('concept.part3.code1_2')}}
     .text-center.pt-25
       img(src="~assets/imgs/intro_3.png", style="width: 90%;")
     .text-66.mt-20
-      span.ft-16.ft-bold 私たち
-      span Sita Dining'sはスパイス料理を通して、皆さまに新しい感動を提供したく日々、研究・開発致しております。
+      span.ft-16.ft-bold {{$pc18n.t('concept.part4.code1_1')}}
+      span {{$pc18n.t('concept.part4.code1_2')}}{{$pc18n.t('concept.part4.code1_3')}}{{$pc18n.t('concept.part4.code1_4')}}
       br
       br
-      span.ft-16.ft-bold 料理
-      span の出会いも一期一会。是非Sita Dining'sのお料理をお楽しみ下さい。
+      span.ft-16.ft-bold {{$pc18n.t('concept.part4.code2_1')}}
+      span {{$pc18n.t('concept.part4.code2_2')}}{{$pc18n.t('concept.part4.code2_3')}}
     .text-center.pt-25
       img(src="~assets/imgs/intro_4.png", style="width: 90%;")
     .text-66.mt-20
-      span.ft-16.ft-bold 安心・
-      span 安全にも取り組みます。料理の検体検査を始めとして、スタッフの健康検査なども定期的に実施。食品衛生管理の徹底に従事された作業習慣。皆様に安心・安全も提供します。
+      span.ft-16.ft-bold {{$pc18n.t('concept.part5.code1_1')}}
+      span {{$pc18n.t('concept.part5.code1_2')}}
     img.full-width.mt-45(src="~assets/imgs/intro_5.png")
   img.full-width.mt-35(src="~assets/imgs/intro_6.png")
   .padding-lg.pt-15

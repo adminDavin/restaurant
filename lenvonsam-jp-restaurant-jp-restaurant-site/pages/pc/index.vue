@@ -7,20 +7,20 @@ a-layout(style="background: #fff")
       a-row.pc-ft-noto-black(style="background:#EDF1E8;border-bottom: 1px solid #DAE2D2")
         a-col.home-card.flex.align-center.justify-center(:span="6")
           a.text-center(href="#pcMainIntro")
-            .ft-18 店舗紹介
-            div Store Information
+            .ft-18 {{$pc18n.t('pcIndex.header1.storeInfo.above')}}
+            div {{$pc18n.t('pcIndex.header1.storeInfo.below')}}
         a-col.home-card.flex.align-center.justify-center(:span="6")
           a.text-center(href='https://sitadinning.base.shop/', target="_blank")
-            .ft-18 オンラインショップ
-            div Online shop
+            .ft-18 {{$pc18n.t('pcIndex.header1.onlineShop.above')}}
+            div {{$pc18n.t('pcIndex.header1.onlineShop.below')}}
         a-col.home-card.flex.align-center.justify-center(:span="6", @click="jump('/pc/appoint')")
           .text-center
-            .ft-18 予    約
-            div Reserve
+            .ft-18 {{$pc18n.t('pcIndex.header1.reserve.above')}}
+            div {{$pc18n.t('pcIndex.header1.reserve.below')}}
         a-col.home-card.flex.align-center.justify-center(:span="6", @click="jump('/pc/intro')")
           .text-center
-            .ft-18 会社紹介
-            div Concept
+            .ft-18 {{$pc18n.t('pcIndex.header1.concept.above')}}
+            div {{$pc18n.t('pcIndex.header1.concept.below')}}
     a-carousel.mt-25
       .pc-banner-bg(v-for="(item,idx) in home_2", :key="idx", :style="{'height': '235px', backgroundImage: 'url(' + item.bannerUrl + ')'}", @click="clickBanner(item)")
         //- img.full-width(:src="item.bannerUrl")
@@ -40,8 +40,8 @@ a-layout(style="background: #fff")
         .pc-banner-bg(v-for="(item,idx) in home_3", :key="idx", :style="{'height': '800px', backgroundImage: 'url(' + item.bannerUrl + ')'}", @click="clickBanner(item)")
       //- img.full-width(:src="item.bannerUrl", style="height: 650px")
   .pc-content
-    .pt-20.text-center.intro-title.pc-ft-parisienne Concept
-    .text-center.ft-bold.mt-10.ft-24.pc-ft-noto-black 会社紹介
+    .pt-20.text-center.intro-title.pc-ft-parisienne {{$pc18n.t('pcIndex.header1.concept.below')}}
+    .text-center.ft-bold.mt-10.ft-24.pc-ft-noto-black {{$pc18n.t('pcIndex.header1.concept.above')}}
     .mt-25.text-center.ft-bold.text-green.ft-24
       span {{$pc18n.t('home.section2.title')}}
     a-row.text-66.mt-35
@@ -61,19 +61,19 @@ a-layout(style="background: #fff")
     a-row.text-66.mt-20
       a-col.pr-25(:span="12", style="padding-top: 5.5%")
         .intro-text-box
-          span.ft-24.ft-bold 私たち
-          span.ft-20 Sita Dining'sはスパイス料理を通して、
+          span.ft-24.ft-bold {{$pc18n.t('concept.part4.code1_1')}}
+          span.ft-20 {{$pc18n.t('concept.part4.code1_2')}}
           br
-          span.ft-20 皆さまに新しい感動を提供したく日々、
+          span.ft-20 {{$pc18n.t('concept.part4.code1_3')}}
           br
-          span.ft-20 研究・開発致しております。
+          span.ft-20 {{$pc18n.t('concept.part4.code1_4')}}
           br
           br
           br
-          span.ft-24.ft-bold 料理
-          span.ft-20 の出会いも一期一会。
+          span.ft-24.ft-bold {{$pc18n.t('concept.part4.code2_1')}}
+          span.ft-20 {{$pc18n.t('concept.part4.code1_2')}}
           br
-          span.ft-20 是非Sita Dining'sのお料理をお楽しみ下さい。
+          span.ft-20 {{$pc18n.t('concept.part4.code1_3')}}
           //- span.ft-20 にも季節の野菜など多くの野菜を使い、健康食材とされる商品を多数使用して調理いたしております。
       a-col(:span="12")
         img(src="~assets/imgs/intro_3.png", style="width: 90%;")
@@ -82,18 +82,18 @@ a-layout(style="background: #fff")
         img(src="~assets/imgs/intro_4.png", style="width: 90%;")
       a-col(:span="12", style="padding-top: 10%")
         .intro-text-box
-          span.ft-24.ft-bold 安心・
-          span.ft-20 安全にも取り組みます。料理の検体検査を始めとして、スタッフの健康検査なども定期的に実施。食品衛生管理の徹底に従事された作業習慣。皆様に安心・安全も提供します。
+          span.ft-24.ft-bold {{$pc18n.t('concept.part5.code1_1')}}
+          span.ft-20 {{$pc18n.t('concept.part5.code1_2')}}
     .text-right.mt-20
-      .m-reverse-button.pc-detail-button(@click="jump('/pc/intro')") もっと詳しく
+      .m-reverse-button.pc-detail-button(@click="jump('/pc/intro')") {{$pc18n.t('common.more')}}
   //- img.full-width.mt-35(src="~assets/imgs/home_1.png")
   .home-rsst-bg(:style="{'height': homeRsstHeight + 'px'}")
     .box
       a-carousel.mt-25(autoplay)
         .pc-banner-bg(v-for="(item,idx) in home_4", :key="idx", :style="{'height': '768px', backgroundImage: 'url(' + item.bannerUrl + ')'}", @click="clickBanner(item)")
       //- img.full-width(:src="item.bannerUrl", style="height: 650px")
-  #pcMainIntro.pt-30.text-center.intro-title.pc-ft-parisienne Store Introduce
-  .text-center.ft-bold.mt-10.ft-24.pc-ft-noto-black 店舗紹介
+  #pcMainIntro.pt-30.text-center.intro-title.pc-ft-parisienne {{$pc18n.t('pcIndex.header1.storeInfo.below')}}
+  .text-center.ft-bold.mt-10.ft-24.pc-ft-noto-black {{$pc18n.t('pcIndex.header1.storeInfo.above')}}
   .pc-content
     .padding-lg
       a-row.pt-35(v-for="(row, idx) in merchant2DList", :key="idx", style="border-bottom: 1px solid #959595")
@@ -265,7 +265,7 @@ export default PcIndexPage
   display flex
   align-items center
   justify-content center
-  background-image url('../../assets/imgs/home_3.png')
+  background-image url('../../assets/imgs/home_3.jpg')
   background-position center
   background-size cover
   .box
