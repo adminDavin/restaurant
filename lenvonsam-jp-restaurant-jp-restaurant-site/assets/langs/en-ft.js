@@ -10,55 +10,55 @@ export default {
   pcIndex: {
     header1: {
       storeInfo: {
-        above: '店舗紹介',
+        above: 'Store Info',
         below: 'Store Information',
       },
       onlineShop: {
-        above: 'オンラインショップ',
+        above: 'Online Shop',
         below: 'Online shop',
       },
       reserve: {
-        above: '予    約',
+        above: 'reserve',
         below: 'reserve',
       },
       concept: {
-        above: '会社紹介',
+        above: 'Concept',
         below: 'Concept',
       },
       notice: {
-        above: 'お知らせ',
+        above: 'News&Topics',
         below: 'News&Topics',
       },
     },
   },
   concept: {
     part1: {
-      code1_1: 'スパイス料理を',
-      code1_2: `毎日楽しんでいただきたい!`,
-      code3: `スパイスは味や、風味を楽しめる事だけじゃなく、健康や美容にも大きく働きかける調味料としても近年では広く知れ渡ってきている様に、アンチエイジングの抗酸化作用効果、体脂肪を燃焼させて代謝アップ、血行促進で冷え性の 改善、カレーなどに代表されるクミンは消化液の分泌を促して、解毒作用や整腸作用とさら には食欲増進、抗酸化作用や免疫力も上げると言うほどスパイス一つをとっても大変身体に良い働きをするものばかりなのです。医食同源と言われる様に日々の食事の中で少しづつでもスパイスを意識した生活を送ってみませんか? `,
-      code4: `by株式会社SURYA`
+      code1_1: 'We ',
+      code1_2: `want you to enjoy the spice cuisine every day!`,
+      code3: `Spice, which not only fill the cuisine with surprising textures and flavors, are also widely known in recent years as spices with miraculous effects on health and beauty, as well as anti-aging antioxidant effects, burning body fat and improving metabolism, promoting blood circulation and improving sensitivity to cold, while cumin, typified by curry, is a natural source of digestive juices. They promote secretion, detoxification, intestinal regulation, appetite stimulation, antioxidant effects and immunity. Speaking of medicine and food, why don't we try to discover more about the deliciousness and benefits of spices in our daily diet? `,
+      code4: `by SURYA Corporation`
     },
-    subTitle: `“ SURYAとスパイスの融合でお料理を提供いたしております ”`,
+    subTitle: `“We serve dishes with a fusion of SURYA and spices”`,
     part2: {
-      code1_1: `アジア`,
-      code1_2: `各国で経験を積んだシェフ達による調理技術が今、惜しみなく発揮された料理たちは、どこか新しくもあり、どこか懐かしくもあります。`
+      code1_1: `The dishes`,
+      code1_2: ` that are generously demonstrated by the chefs who have experience in Asian countries are new and nostalgic.`
     },
     part3: {
-      code1_1: `私たち`,
-      code1_2: `の料理は香辛料を多用した料理が多いのですが、そこは日本でも⻑期に腕を振るうシェフたちが日本の皆様の好みのさじ加減を十分に理解しておりますのできっと気に入って頂ける味だと信じています。`
+      code1_1: `Sita Dining's`,
+      code1_2: ` devote ourselves to research and development every day, hoping to bring you a different kind of surprise through our unusual spicy gourmet cuisine.`
     },
     part4: {
-      code1_1: `私たち`,
-      code1_2: `Sita Dining'sはスパイス料理を通して、`,
-      code1_3: `皆さまに新しい感動を提供したく日々、`,
-      code1_4: `研究・開発致しております。`,
-      code2_1: `料理`,
-      code2_2: `の出会いも一期一会。`,
-      code2_3: `是非Sita Dining'sのお料理をお楽しみ下さい。`
+      code1_1: `Sita Dining's`,
+      code1_2: `devote ourselves to `,
+      code1_3: `research and development every day, `,
+      code1_4: `hoping to bring you a different kind of surprise through our unusual spicy gourmet cuisine.`,
+      code2_1: `An `,
+      code2_2: `encounter with cuisine is a once-in-a-lifetime event.`,
+      code2_3: `We hope you will enjoy the cuisine at Sita Dining's.`
     },
     part5: {
-      code1_1: `安心・`,
-      code1_2: `安全にも取り組みます。料理の検体検査を始めとして、スタッフの健康検査なども定期的に実施。食品衛生管理の徹底に従事された作業習慣。皆様に安心・安全も提供します。` 
+      code1_1: `We `,
+      code1_2: ` will also work on safety and security. Starting with food sample inspections, staff health inspections are also conducted on a regular basis. Work habits engaged in thorough food hygiene management. We also provide safety and security to everyone.` 
     },
     mb: {
       part1: {
@@ -66,16 +66,17 @@ export default {
         code1_2: `の料理は香辛料を多用した料理が多いのですが、そこは日本でも⻑期に腕を振るうシェフたちが日本の皆様の好みのさじ加減を十分に理解しておりますのできっと気に入って頂ける味だと信じています。`,
       },
       part2: {
-        code1_1: `私たち`,
-        code1_2: `Sita Dining'sはスパイス料理を通して、皆さまに新しい感動を提供したく日々、研究・開発致しております。`
+        code1_1: `Sita Dining's`,
+        code1_2: `devote ourselves to research and development every day, hoping to bring you a different kind of surprise through our unusual spicy gourmet cuisine.`
       },
       part3: {
-        code1_1: `料理`,
-        code1_2: `の出会いも一期一会。是非Sita Dining'sのお料理をお楽しみ下さい。`,
+        code1_1: `An encounter`,
+        code1_2: ` with cuisine is a once-in-a-lifetime event.
+        We hope you will enjoy the cuisine at Sita Dining's.`,
       },
       part4: {
-        code1_1: `安心・`,
-        code1_2: `安全にも取り組みます。料理の検体検査を始めとして、スタッフの健康検査なども定期的に実施。食品衛生管理の徹底に従事された作業習慣。皆様に安心・安全も提供します。`
+        code1_1: `We`,
+        code1_2: ` will also work on safety and security. Starting with food sample inspections, staff health inspections are also conducted on a regular basis. Work habits engaged in thorough food hygiene management. We also provide safety and security to everyone.`
       },
       intro: {
         subtitle: {
@@ -147,8 +148,8 @@ export default {
     text12_3: 'that means SITA.',
     timeline: {
       d0: {
-        time: '2009年 株式会社SURYAを設立',
-        text: '品川区中延にてインド料理ハナカジャナをオープン',
+        time: '2009 Established SURYA Co., Ltd.',
+        text: 'Opened Indian food Hanakajana in Nakanobu, Shinagawa-ku',
       },
       d1: {
         time: '2010',
