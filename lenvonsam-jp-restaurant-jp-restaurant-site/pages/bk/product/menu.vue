@@ -95,13 +95,13 @@ class BkProductMenuIndexPage extends Vue {
 
   formConfig = {
     rules: {
-      productTitle: [{ required: true, message: '不能为空', trigger: 'blur' }],
+      productTitle: [{ required: true, message: '必須項目です', trigger: 'blur' }],
       productSubTitle: [
-        { required: true, message: '不能为空', trigger: 'blur' },
+        { required: true, message: '必須項目です', trigger: 'blur' },
       ],
-      productDesc: [{ required: true, message: '不能为空', trigger: 'blur' }],
+      productDesc: [{ required: true, message: '必須項目です', trigger: 'blur' }],
       productDescUrl: [
-        { required: true, message: '不能为空', trigger: 'blur' },
+        { required: true, message: '必須項目です', trigger: 'blur' },
       ],
     },
   }
@@ -188,7 +188,7 @@ class BkProductMenuIndexPage extends Vue {
         const idstr = this.choosedRowKeys.join(',')
         await this.proxy('sys/product/batch/remove', 'del', { ids: idstr })
         this.rowBtnEnable = true
-        this.msgShow('操作成功', 'success')
+        this.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -209,7 +209,7 @@ class BkProductMenuIndexPage extends Vue {
           status: mark,
           ids: idstr,
         })
-        me.msgShow('操作成功', 'success')
+        me.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -263,7 +263,7 @@ class BkProductMenuIndexPage extends Vue {
         const { data } = await me.proxy('sys/product', 'post', obj)
         this.rowBtnEnable = true
         if (data.success) {
-          me.msgShow('操作成功', 'success')
+          me.msgShow('保存しました', 'success')
           this.loadData()
           this.drawerClose()
         } else {

@@ -79,9 +79,9 @@ class BkNewsIndexPage extends Vue {
 
   formConfig = {
     rules: {
-      newsTitle: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      newsContent: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      publishDate: [{ required: true, message: '不能为空', trigger: 'blur' }],
+      newsTitle: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      newsContent: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      publishDate: [{ required: true, message: '必須項目です', trigger: 'blur' }],
     },
   }
 
@@ -140,7 +140,7 @@ class BkNewsIndexPage extends Vue {
         const idstr = this.choosedRowKeys.join(',')
         await this.proxy('sys/news/batch/remove', 'del', { ids: idstr })
         this.rowBtnEnable = true
-        this.msgShow('操作成功', 'success')
+        this.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -161,7 +161,7 @@ class BkNewsIndexPage extends Vue {
           status: mark,
           ids: idstr,
         })
-        me.msgShow('操作成功', 'success')
+        me.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -201,7 +201,7 @@ class BkNewsIndexPage extends Vue {
         const { data } = await me.proxy('sys/news', 'post', obj)
         this.rowBtnEnable = true
         if (data.success) {
-          me.msgShow('操作成功', 'success')
+          me.msgShow('保存しました', 'success')
           this.loadData()
           this.drawerClose()
         } else {

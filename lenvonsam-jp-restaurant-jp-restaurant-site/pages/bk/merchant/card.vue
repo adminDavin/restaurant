@@ -82,9 +82,9 @@ class BkMerchantCardPage extends Vue {
 
   formConfig = {
     rules: {
-      title: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      content: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      busiCode: [{ required: true, message: '不能为空', trigger: 'blur' }],
+      title: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      content: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      busiCode: [{ required: true, message: '必須項目です', trigger: 'blur' }],
     },
   }
 
@@ -166,7 +166,7 @@ class BkMerchantCardPage extends Vue {
         const idstr = this.choosedRowKeys.join(',')
         await this.proxy('sys/card/batch/remove', 'del', { ids: idstr })
         this.rowBtnEnable = true
-        this.msgShow('操作成功', 'success')
+        this.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -184,7 +184,7 @@ class BkMerchantCardPage extends Vue {
         this.rowBtnEnable = false
         const { data } = await this.proxy('sys/card', 'post', obj)
         this.rowBtnEnable = true
-        this.msgShow('操作成功', 'success')
+        this.msgShow('保存しました', 'success')
         this.loadData()
         this.drawerClose()
       }

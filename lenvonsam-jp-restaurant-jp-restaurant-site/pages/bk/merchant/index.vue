@@ -118,11 +118,11 @@ class BkMerchantIndexPage extends Vue {
 
   formConfig = {
     rules: {
-      merchantName: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      intro: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      email: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      phone: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      address: [{ required: true, message: '不能为空', trigger: 'blur' }],
+      merchantName: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      intro: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      email: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      phone: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      address: [{ required: true, message: '必須項目です', trigger: 'blur' }],
     },
   }
 
@@ -227,7 +227,7 @@ class BkMerchantIndexPage extends Vue {
         )
         this.rowBtnEnable = true
         if (data.returnCode === 0) {
-          me.msgShow('操作成功', 'success')
+          me.msgShow('保存しました', 'success')
           this.loadData()
         } else {
           me.msgShow(data.message)
@@ -295,7 +295,7 @@ class BkMerchantIndexPage extends Vue {
         const { data } = await me.proxy('sys/merchant', 'post', obj)
         this.rowBtnEnable = true
         if (data.success) {
-          me.msgShow('操作成功', 'success')
+          me.msgShow('保存しました', 'success')
           this.loadData()
           this.drawerClose()
         } else {

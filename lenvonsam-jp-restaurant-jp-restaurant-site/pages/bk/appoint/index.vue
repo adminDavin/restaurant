@@ -74,8 +74,8 @@ class BkAppointIndexPage extends Vue {
 
   formConfig = {
     rules: {
-      merchantCode: [{ required: true, message: '不能为空', trigger: 'blur' }],
-      appointTime: [{ required: true, message: '不能为空', trigger: 'blur' }],
+      merchantCode: [{ required: true, message: '必須項目です', trigger: 'blur' }],
+      appointTime: [{ required: true, message: '必須項目です', trigger: 'blur' }],
     },
   }
 
@@ -134,7 +134,7 @@ class BkAppointIndexPage extends Vue {
         this.rowBtnEnable = false
         await this.proxy('user/account/batch/remove', 'del', { ids: id })
         this.rowBtnEnable = true
-        this.msgShow('操作成功', 'success')
+        this.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -159,7 +159,7 @@ class BkAppointIndexPage extends Vue {
           }
         )
         this.rowBtnEnable = true
-        me.msgShow('操作成功', 'success')
+        me.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -203,7 +203,7 @@ class BkAppointIndexPage extends Vue {
         const { data } = await me.proxy('sys/merchantAppoint', 'post', obj)
         this.rowBtnEnable = true
         if (data.success) {
-          me.msgShow('操作成功', 'success')
+          me.msgShow('保存しました', 'success')
           this.loadData()
           this.drawerClose()
         } else {

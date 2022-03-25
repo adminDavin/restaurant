@@ -181,7 +181,7 @@ class BkBannerIndexPage extends Vue {
         const idstr = this.choosedRowKeys.join(',')
         await this.proxy('sys/banner/batch/remove', 'del', { ids: idstr })
         this.rowBtnEnable = true
-        this.msgShow('操作成功', 'success')
+        this.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -202,7 +202,7 @@ class BkBannerIndexPage extends Vue {
           status: mark,
           ids: idstr,
         })
-        me.msgShow('操作成功', 'success')
+        me.msgShow('保存しました', 'success')
         this.params = {
           currentPage: 1,
         }
@@ -255,7 +255,7 @@ class BkBannerIndexPage extends Vue {
         const { data } = await me.proxy('sys/banner', 'post', obj)
         this.rowBtnEnable = true
         if (data.success) {
-          me.msgShow('操作成功', 'success')
+          me.msgShow('保存しました', 'success')
           this.loadData()
           this.drawerClose()
         } else {
