@@ -47,16 +47,6 @@
             .pc-banner-bg.merchant-gallery-card(:style="{backgroundImage: 'url(' +col.fileUrl + ')' }")
     //- .text-center.pt-25(v-for="(gallery, idx) in merchantObj.gallery", :key="idx", :class="{'mb-25': idx < (merchantObj.gallery.length - 1) }")
       img(:src="gallery.fileUrl", style="width: 80%; margin: 0px auto")
-  .pt-25.pb-25.border-bottom-line  
-    .ft-24 地図
-    .mt-15.merchant-map-container(:style="{backgroundImage: 'url(' + merchantObj.mapUrl +')'}")
-      //- GmapMap(ref="mapRef", :center="{lat:10, lng:10}", :zoom="7",map-type-id="terrain",style="width: 900px; height: 440px; margin: 0 auto")
-  .pt-35.pb-35.border-bottom-line(v-for="(card, idx) in merchantCards", :key="idx")
-    .ft-24 {{card.title}}
-    a-row.mt-25
-      a-col(:span="1")
-      a-col(:span="23")
-        .ft-18.text-gray(v-html="card.content")
   .pt-35.pb-35.border-bottom-line
     .ft-24 メニュー
     a-row
@@ -70,6 +60,17 @@
             .ellps.ellps-2(style="color: #AD9751;height:48px;overflow:hidden;line-height:24px") {{menu.productDesc}}
           a-tooltip(placement="right", :title="menu.productDescUrl")
             .text-gray.ellps.ellps-3(style="overflow:hidden; height: 72px;line-height:24px") {{menu.productDescUrl}}
+  
+  .pt-25.pb-25.border-bottom-line  
+    .ft-24 地図
+    .mt-15.merchant-map-container(:style="{backgroundImage: 'url(' + merchantObj.mapUrl +')'}")
+      //- GmapMap(ref="mapRef", :center="{lat:10, lng:10}", :zoom="7",map-type-id="terrain",style="width: 900px; height: 440px; margin: 0 auto")
+  .pt-35.pb-35.border-bottom-line(v-for="(card, idx) in merchantCards", :key="idx")
+    .ft-24 {{card.title}}
+    a-row.mt-25
+      a-col(:span="1")
+      a-col(:span="23")
+        .ft-18.text-gray(v-html="card.content")
   .mt-35.text-center
     img(src="~assets/imgs/drink_bill.jpeg")
 </template>

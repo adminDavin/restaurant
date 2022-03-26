@@ -32,13 +32,6 @@
           img(src="~assets/imgs/ins.png", style="width: 50px", @click="openNewWindow(merchantObj.insSite)")
         .col
           img(src="~assets/imgs/line.png", style="width: 50px", @click="openNewWindow(merchantObj.lineSite)")
-  .pt-35.pb-35.border-bottom-line  
-    .ft-18.ft-bold 地図
-    .text-center.mt-25
-      img(:src="merchantObj.mapUrl", style="width: 94%")
-  .pt-35.pb-35.border-bottom-line(v-for="(card, idx) in merchantCards", :key="idx")
-      .ft-18.ft-bold {{card.title}}
-      .mt-25.ft-10.text-gray(v-html="card.content")
   .pt-35.pb-35.border-bottom-line
     .ft-18.ft-bold メニュー
     .mt-25(v-for="(menu, idx) in merchantProductMenus", :key="idx")
@@ -47,6 +40,14 @@
       .ft-16.text-gray {{menu.productSubTitle}}
       div(style="color: #AD9751") {{menu.productDesc}}
       .ft-12.text-gray {{menu.productDescUrl}}
+  .pt-35.pb-35.border-bottom-line  
+    .ft-18.ft-bold 地図
+    .text-center.mt-25
+      img(:src="merchantObj.mapUrl", style="width: 94%")
+  .pt-35.pb-35.border-bottom-line(v-for="(card, idx) in merchantCards", :key="idx")
+      .ft-18.ft-bold {{card.title}}
+      .mt-25.ft-10.text-gray(v-html="card.content")
+  
   .mt-35.text-center
     img.full-width(src="~assets/imgs/drink_bill.jpeg")
 </template>
