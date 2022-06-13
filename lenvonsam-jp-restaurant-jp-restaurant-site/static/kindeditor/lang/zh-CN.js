@@ -8,7 +8,7 @@
 *******************************************************************************/
 
 KindEditor.lang({
-	source : 'HTML代码',
+	source : 'HTMLコード入力',
 	preview : '预览',
 	undo : '后退(Ctrl+Z)',
 	redo : '前进(Ctrl+Y)',

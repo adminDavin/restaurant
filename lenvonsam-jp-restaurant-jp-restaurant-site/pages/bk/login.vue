@@ -37,7 +37,7 @@ class LoginPage extends Vue {
       })
       console.log('data:>>', data)
       this.setUser(data.data)
-      me.msgShow('登录成功', 'success')
+      me.msgShow('ログインしました。', 'success')
       me.jump('/bk/')
     } catch (e) {
       console.log('is login:>>.', this.isLogin)

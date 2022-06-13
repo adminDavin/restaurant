@@ -54,7 +54,7 @@ class BkAppointIndexPage extends Vue {
       this.visible = true
     } else {
       if (this.choosedRowKeys.length === 0) {
-        me.msgShow('请选择行')
+        me.msgShow('編集する項目を選択してください')
         return
       }
       this.remoteBatchAction()

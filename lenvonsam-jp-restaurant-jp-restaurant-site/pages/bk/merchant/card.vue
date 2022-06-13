@@ -61,7 +61,7 @@ class BkMerchantCardPage extends Vue {
       this.visible = true
     } else {
       if (this.choosedRowKeys.length === 0) {
-        this.msgShow('请选择行')
+        this.msgShow('編集する項目を選択してください')
         return
       }
       this.remoteRemove()

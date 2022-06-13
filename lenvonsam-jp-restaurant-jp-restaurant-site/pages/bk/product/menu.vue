@@ -74,7 +74,7 @@ class BkProductMenuIndexPage extends Vue {
       this.remoteRemove()
     } else {
       if (this.choosedRowKeys.length === 0) {
-        this.msgShow('请选择行')
+        this.msgShow('編集する項目を選択してください')
         return
       }
       this.remoteBatchAction(type === 'batchUp' ? 1 : 2)
@@ -131,7 +131,7 @@ class BkProductMenuIndexPage extends Vue {
     switch (type) {
       case 'edit':
         if (obj.status === 1) {
-          this.msgShow('已上架无法修改，请先下架')
+          this.msgShow('公開を停止する後、編集することが出来ます。')
           return
         }
         this.localForm.id = obj.id
