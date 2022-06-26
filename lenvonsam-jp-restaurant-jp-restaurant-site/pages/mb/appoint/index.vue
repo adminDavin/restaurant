@@ -65,6 +65,7 @@ class MobileAppointIndexPage extends Vue {
     '19:00-20:00',
     '20:00-21:00',
     '21:00-22:00',
+    
   ]
   localForm: UserAppointDTO = {
     userName: '',

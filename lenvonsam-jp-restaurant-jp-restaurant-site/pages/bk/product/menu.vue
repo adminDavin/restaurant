@@ -21,7 +21,7 @@
       a-row
         a-col(:span="12", :offset="6")
           a-button.mr-15(@click="submitForm", type="primary", style="width: 100px") 保存
-          a-button(@click="drawerClose", style="width: 100px") 取消
+          a-button(@click="drawerClose", style="width: 100px") キャンセル
   a-modal(:visible="previewVisible" :footer="null" @cancel="previewVisible = false")
     img.full-width(:src="previewContent")
 </template>

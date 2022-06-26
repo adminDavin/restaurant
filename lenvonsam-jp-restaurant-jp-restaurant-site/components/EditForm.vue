@@ -11,7 +11,7 @@ a-drawer(:visible="visible", :width="width", @close="drawerClose", :title="formC
             a-input(v-model="localForm[item[1].key]")
   .form-footer
     a-button.mr-15(@click="submitForm('ruleForm')", type="primary", style="width: 100px") {{formConfig.confirmText || '保存'}}
-    a-button(@click="drawerClose", style="width: 100px") {{formConfig.cancelText || '取消'}}
+    a-button(@click="drawerClose", style="width: 100px") {{formConfig.cancelText || 'キャンセル'}}
 
 </template>
 

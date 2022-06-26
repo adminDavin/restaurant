@@ -112,7 +112,7 @@ class BkAppointIndexPage extends Vue {
         break
       case 'batchDel':
         if (this.choosedRowKeys.length === 0) {
-          this.msgShow('请选择需要操作的行')
+          this.msgShow('編集する項目を選択してください')
           return
         }
         this.remoteBatchAction()

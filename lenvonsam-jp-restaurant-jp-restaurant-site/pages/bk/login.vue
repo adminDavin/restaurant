@@ -1,14 +1,14 @@
 <template lang="pug">
 .login-container.banner-gradient
   .login-box
-    .title 用户登录
+    .title ログイン
     a-form(:label-col="{ span: 5 }", :wrapper-col="{ span: 16 }")
-      a-form-item(label="用户名")
+      a-form-item(label="ユーザー名")
         a-input(v-model="name") 密码
-      a-form-item(label="密码")
+      a-form-item(label="パスワード")
         a-input-password(v-model="pwd") 密码
       a-form-item(:wrapper-col="{ span: 12, offset: 9 }")
-        a-button(@click="userLogin", type="primary") 用户登录
+        a-button(@click="userLogin", type="primary") ログイン
 </template>
 
 <script lang="ts">

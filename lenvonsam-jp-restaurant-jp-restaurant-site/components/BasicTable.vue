@@ -8,7 +8,7 @@ a-table(:data-source="currentData", border, :rowKey="rowKey", :pagination="defau
         template(v-for="(actionBtn,idx) in column.actions")
           template(v-if="record.editable")
             template(v-if="actionBtn.type == 'edit'")
-              a-button.mr-5(size="small", @click="rowCancel(record[rowKey])") 取消
+              a-button.mr-5(size="small", @click="rowCancel(record[rowKey])") キャンセル
               a-button(size="small", type="primary", @click="actionsClick('save', record)") 确定
           template(v-else)
             a-popconfirm(v-if="actionBtn.type === 'remove'", title="您确定要删除吗？", @confirm="actionsClick('remove', record)")

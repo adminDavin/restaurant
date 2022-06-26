@@ -1,6 +1,6 @@
 <template lang="pug">
 .pc-content.bg-light-green.padding.pt-30.pb-50
-  .ft-18.ft-bold ${{$pc18n.t('appointment.text1')}}
+  .ft-18.ft-bold {{$pc18n.t('appointment.text1')}}
   .pc-appoint-card-content
     m-input.mt-25.text-center.relative(:placeholder="$pc18n.t('appointment.text1')", suffix, icon="dropdown", @focus="merchantContainerShow = true", v-model="localForm.merchantName", readOnly)
       .bg-white.appoint-merchant-select(v-if="merchantContainerShow")
