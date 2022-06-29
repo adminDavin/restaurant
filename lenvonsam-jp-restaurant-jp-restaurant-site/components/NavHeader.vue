@@ -72,7 +72,7 @@ export default {
     exitAction () {
       const me = this
       this.confirm({
-        title: '您确定要退出吗？'
+        title: 'ログアウトしてもよろしいですか？'
       }).then((res) => {
         if (res === 'confirm') {
           this.request({ url: '/proxy/logout', params: {} })
