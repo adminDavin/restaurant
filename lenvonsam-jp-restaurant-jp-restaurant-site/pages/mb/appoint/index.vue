@@ -9,15 +9,15 @@
   calendar.mt-15(:dataReload.sync="calendarDataReload", :changeList="merchantAppointList", @pagination="calendarPg", @choose="calendarChoose")
   .mt-20.ft-bold {{$pc18n.t('appointment.text10')}}
   m-input.mt-15(:placeholder="$pc18n.t('appointment.text11')", textCenter, v-model="localForm.userName")
-  m-input.mt-15(placeholder="時間帯", textCenter, :list="appointRangeList", v-model="localForm.appointRange", type="select")
+  m-input.mt-15(placeholder="$pc18n.t('appointment.text16')", textCenter, :list="appointRangeList", v-model="localForm.appointRange", type="select")
   .row.mt-15
     .col.pr-5
-      m-input.text-center(placeholder="大人", suffix,icon="human", v-model="adultStr")
+      m-input.text-center(placeholder="$pc18n.t('appointment.text18')", suffix,icon="human", v-model="adultStr")
     .col.pl-5
-      m-input.text-center(placeholder="小人", suffix,icon="baby", v-model="childStr")
+      m-input.text-center(placeholder="$pc18n.t('appointment.text19')", suffix,icon="baby", v-model="childStr")
   m-input.mt-15(:placeholder="$pc18n.t('appointment.text12')", textCenter, suffix, icon="email", v-model="localForm.receiveEmail")
   m-input.mt-15(:placeholder="$pc18n.t('appointment.text13')", textCenter, suffix, icon="phone", v-model="localForm.appointPhone")
-  a-textarea.mt-15.text-center(size="large", :maxLength="250", placeholder="メモ", v-model="localForm.remark", :rows="4")
+  a-textarea.mt-15.text-center(size="large", :maxLength="250", placeholder="$pc18n.t('appointment.text17')", v-model="localForm.remark", :rows="4")
   .pb-35.border-bottom-line
   .pt-25.pb-25.ft-18.ft-bold {{$pc18n.t('appointment.text14')}}
   m-card.mb-15(:choosed.sync="cbx.choosed", v-for="(cbx,idx) in cbxArray", :key="idx", :collapse="cbx.collapse", @choose="cbxChange($event, idx)", :item="cbx", :bgUrl="cbx.coverUrl")

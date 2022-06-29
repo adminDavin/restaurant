@@ -53,4 +53,4 @@ qiniu:
   bucket: jprestaurant
   access-key: o1PUZJyqqKEJ8CwwxH3fRQFELAHZ-oK9LwNwjZVm
   secret-key: 7ocZ49ef61lq9ny4uA3FFBHCBUgRY8lSZnheXjXB
-  public-url: http://jprestaurant.thinkingsam.cn/
+  public-url: https://jprestaurant.thinkingsam.cn/

@@ -196,5 +196,9 @@ export default {
     text13: '电话号码',
     text14: '请选择套餐',
     text15: '只预约座位',
+    text16: '时间',
+    text17: '备注',
+    text18: '大人',
+    text19: '小人',
   },
 }

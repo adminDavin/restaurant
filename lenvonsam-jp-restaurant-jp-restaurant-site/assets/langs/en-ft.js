@@ -201,5 +201,9 @@ export default {
     text13: 'Telephone number',
     text14: 'Please choose a course',
     text15: 'Reserve seats only',
+    text16: 'timezone',
+    text17: 'remark',
+    text18: 'adult',
+    text19: 'kids',
   },
 }
